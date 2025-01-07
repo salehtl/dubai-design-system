@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/components-js.esm.js"></script>
+    <script nomodule src="/build/components-js.js"></script>
+    <link rel="stylesheet" href="/build/components-js.css" />
+
+    <script>
+      // Custom event handlers
+      function handlePrimaryClick(e) {
+        console.log('Primary button clicked!', e.detail);
+        // Add custom logic here
+      }
+
+      function handleSecondaryClick(e) {
+        console.log('Secondary button clicked!', e.detail);
+        // Add custom logic here
+      }
+
+      // Add event listeners when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        const primaryBtn = document.getElementById('primary-btn');
+        const secondaryBtn = document.getElementById('secondary-btn');
+
+        primaryBtn.addEventListener('ddsClick', handlePrimaryClick);
+        secondaryBtn.addEventListener('ddsClick', handleSecondaryClick);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="header">
+        <h1>Hello World</h1>
+        <small>This is a small text</small>
+      </section>
+      <dds-button 
+        id="primary-btn"
+      variant="primary" 
+      type="submit" 
+      disabled="false"
+    >
+      Primary Action
+    </dds-button>
+
+    <dds-button 
+      id="secondary-btn"
+      variant="secondary"
+    >
+        Secondary Action
+      </dds-button>
+    </div>
+  </body>
+</html>

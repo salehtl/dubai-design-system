@@ -1,0 +1,30 @@
+{
+  "name": "@dubai-design-system/components-react",
+  "version": "0.0.1",
+  "description": "Dubai Design System as React Components",
+  "author": "saleh <saleh.lootah@digitaldubai.ae>",
+  "keywords": [
+    "components",
+    "react"
+  ],
+  "homepage": "https://www.npmjs.com/settings/dubai-design-system/packages",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/react-library.test.js",
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "dependencies": {
+    "@dubai-design-system/components-js": "*"
+  }
+}

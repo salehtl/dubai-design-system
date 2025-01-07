@@ -1,0 +1,70 @@
+
+:host {
+  display: inline-block;
+  /* Ensure that if the user sets display to block/inline, it adjusts properly */
+}
+
+/* Base Button Styles */
+.dds-button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 4px;
+  background-color: #1f6feb; /* fallback default for primary */
+  color: #ffffff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Primary Variant */
+.dds-button--primary {
+  background-color: #1f6feb;  /* e.g., brand color */
+  color: #ffffff;
+}
+
+.dds-button--primary:hover:not(.is-disabled) {
+  background-color: #1157c9;
+}
+
+.dds-button--primary:focus:not(.is-disabled) {
+  outline: 2px solid #ffd54f; /* High contrast outline for focus */
+  outline-offset: 2px;
+}
+
+.dds-button--primary:active:not(.is-disabled) {
+  background-color: #0d417f;
+}
+
+/* Secondary Variant */
+.dds-button--secondary {
+  background-color: #f0f1f3;
+  color: #24292e;
+}
+
+.dds-button--secondary:hover:not(.is-disabled) {
+  background-color: #e2e3e5;
+}
+
+.dds-button--secondary:focus:not(.is-disabled) {
+  outline: 2px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+.dds-button--secondary:active:not(.is-disabled) {
+  background-color: #c9cbcd;
+}
+
+/* Disabled State */
+.is-disabled,
+.is-disabled:hover,
+.is-disabled:focus,
+.is-disabled:active {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #c0c0c0; /* You can choose a color that suits your design for disabled state */
+  outline: none; /* Typically, disabled buttons do not show focus state. */
+}
