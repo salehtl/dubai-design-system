@@ -1,6 +1,6 @@
 {
   "name": "@dubai-design-system/components-react",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "Dubai Design System as React Components",
   "author": "saleh <saleh.lootah@digitaldubai.ae>",
   "keywords": [
@@ -25,6 +25,6 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@dubai-design-system/components-js": "*"
+    "@dubai-design-system/components-js": "^0.0.1-alpha.0"
   }
 }
