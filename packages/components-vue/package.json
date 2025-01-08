@@ -1,0 +1,38 @@
+{
+  "name": "@dubai-design-system/components-vue",
+  "version": "0.0.1-alpha.0",
+  "description": "Dubai Design System as Vue Components",
+  "keywords": [
+    "components"
+  ],
+  "author": "saleh <saleh.lootah@digitaldubai.ae>",
+  "homepage": "https://www.npmjs.com/settings/dubai-design-system/packages",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salehtl/dubai-design-system.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "bugs": {
+    "url": "https://github.com/salehtl/dubai-design-system/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@dubai-design-system/components-js": "*"
+  }
+}
