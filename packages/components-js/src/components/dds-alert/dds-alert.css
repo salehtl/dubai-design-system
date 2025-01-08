@@ -1,0 +1,167 @@
+.dds-alert {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* Alert types */
+.dds-alert--primary {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+.dds-alert--secondary {
+  background-color: var(--secondary-container); 
+  color: var(--on-secondary-container);
+}
+
+/* Alert variants */
+.dds-alert--info {
+  border-left: 4px solid var(--info);
+}
+
+.dds-alert--info.dds-alert--primary {
+  background-color: var(--info-container);
+  color: var(--on-info-container);
+}
+
+.dds-alert--info.dds-alert--secondary {
+  background-color: var(--info-container-variant);
+  color: var(--on-info-container);
+}
+
+.dds-alert--warning {
+  border-left: 4px solid var(--warning);
+}
+
+.dds-alert--warning.dds-alert--primary {
+  background-color: var(--warning-container);
+  color: var(--on-warning-container);
+}
+
+.dds-alert--warning.dds-alert--secondary {
+  background-color: var(--warning-container-variant);
+  color: var(--on-warning-container);
+}
+
+.dds-alert--error {
+  border-left: 4px solid var(--error);
+}
+
+.dds-alert--error.dds-alert--primary {
+  background-color: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.dds-alert--error.dds-alert--secondary {
+  background-color: var(--error-container-variant);
+  color: var(--on-error-container);
+}
+
+.dds-alert--success {
+  border-left: 4px solid var(--success);
+}
+
+.dds-alert--success.dds-alert--primary {
+  background-color: var(--success-container);
+  color: var(--on-success-container);
+}
+
+.dds-alert--success.dds-alert--secondary {
+  background-color: var(--success-container-variant);
+  color: var(--on-success-container);
+}
+
+/* Alert content */
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.alert-description {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Alert actions */
+.alert-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.alert-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Primary link styles for each variant */
+.dds-alert--info .alert-link--primary {
+  color: var(--info);
+}
+
+.dds-alert--warning .alert-link--primary {
+  color: var(--warning);
+}
+
+.dds-alert--error .alert-link--primary {
+  color: var(--error);
+}
+
+.dds-alert--success .alert-link--primary {
+  color: var(--success);
+}
+
+/* Secondary link styles for each variant */
+.dds-alert--info .alert-link--secondary {
+  color: var(--info-variant);
+}
+
+.dds-alert--warning .alert-link--secondary {
+  color: var(--warning-variant);
+}
+
+.dds-alert--error .alert-link--secondary {
+  color: var(--error-variant);
+}
+
+.dds-alert--success .alert-link--secondary {
+  color: var(--success-variant);
+}
+
+/* Hover states for links */
+.alert-link:hover {
+  background-color: var(--surface-variant);
+}
+
+/* Close button */
+.alert-close {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.alert-close:hover {
+  opacity: 1;
+}
+
+.alert-close:focus {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+

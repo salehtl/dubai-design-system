@@ -1,0 +1,37 @@
+:host {
+  display: inline-block;
+}
+
+/* Base Link Styles */
+.dds-link {
+  color: var(--primary); /* Brand or primary link color */
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out;
+}
+
+.dds-link:hover:not(.is-disabled) {
+  color: var(--primary-variant);
+  text-decoration: underline;
+}
+
+.dds-link:focus:not(.is-disabled) {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+.dds-link:active:not(.is-disabled) {
+  color: var(--primary-variant);
+}
+
+/* Disabled State */
+.is-disabled,
+.is-disabled:hover,
+.is-disabled:focus,
+.is-disabled:active {
+  color: var(--disabled);
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: none;
+  outline: none;
+}

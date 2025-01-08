@@ -1,4 +1,3 @@
-
 :host {
   display: inline-block;
   /* Ensure that if the user sets display to block/inline, it adjusts properly */
@@ -13,58 +12,115 @@
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-family: inherit;
-  border: none;
   border-radius: 4px;
-  background-color: #1f6feb; /* fallback default for primary */
-  color: #ffffff;
-  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Primary Variant */
-.dds-button--primary {
-  background-color: #1f6feb;  /* e.g., brand color */
-  color: #ffffff;
+/* Compact Button Style */
+.dds-button--compact {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
 }
 
-.dds-button--primary:hover:not(.is-disabled) {
-  background-color: #1157c9;
+/* Add transition only for enabled buttons */
+.dds-button:not(.is-disabled) {
+  transition: all 0.2s;
 }
 
-.dds-button--primary:focus:not(.is-disabled) {
-  outline: 2px solid #ffd54f; /* High contrast outline for focus */
+/* Primary Variant - Solid */
+.dds-button--primary.dds-button--solid {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+}
+
+.dds-button--primary.dds-button--solid:hover:not(.is-disabled) {
+  background-color: var(--primary-variant);
+  color: var(--on-primary-variant);
+}
+
+.dds-button--primary.dds-button--solid:focus:not(.is-disabled) {
+  outline: 2px solid var(--outline);
   outline-offset: 2px;
 }
 
-.dds-button--primary:active:not(.is-disabled) {
-  background-color: #0d417f;
+.dds-button--primary.dds-button--solid:active:not(.is-disabled) {
+  background-color: var(--primary-fixed);
 }
 
-/* Secondary Variant */
-.dds-button--secondary {
-  background-color: #f0f1f3;
-  color: #24292e;
+/* Primary Variant - Outline */
+.dds-button--primary.dds-button--outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
-.dds-button--secondary:hover:not(.is-disabled) {
-  background-color: #e2e3e5;
+.dds-button--primary.dds-button--outline:hover:not(.is-disabled) {
+  background-color: var(--primary-variant);
+  color: var(--on-primary-variant);
+  border-color: var(--primary-variant);
 }
 
-.dds-button--secondary:focus:not(.is-disabled) {
-  outline: 2px solid #ffd54f;
+.dds-button--primary.dds-button--outline:focus:not(.is-disabled) {
+  outline: 2px solid var(--outline);
   outline-offset: 2px;
 }
 
-.dds-button--secondary:active:not(.is-disabled) {
-  background-color: #c9cbcd;
+.dds-button--primary.dds-button--outline:active:not(.is-disabled) {
+  background-color: var(--primary-fixed);
+  border-color: var(--primary-fixed);
+}
+
+/* Secondary Variant - Solid */
+.dds-button--secondary.dds-button--solid {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  border: none;
+}
+
+.dds-button--secondary.dds-button--solid:hover:not(.is-disabled) {
+  background-color: var(--secondary-variant);
+  color: var(--on-secondary-variant);
+}
+
+.dds-button--secondary.dds-button--solid:focus:not(.is-disabled) {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+.dds-button--secondary.dds-button--solid:active:not(.is-disabled) {
+  background-color: var(--secondary-fixed);
+}
+
+/* Secondary Variant - Outline */
+.dds-button--secondary.dds-button--outline {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.dds-button--secondary.dds-button--outline:hover:not(.is-disabled) {
+  background-color: var(--secondary-variant);
+  color: var(--on-secondary-variant);
+  border-color: var(--secondary-variant);
+}
+
+.dds-button--secondary.dds-button--outline:focus:not(.is-disabled) {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+.dds-button--secondary.dds-button--outline:active:not(.is-disabled) {
+  background-color: var(--secondary-fixed);
+  border-color: var(--secondary-fixed);
 }
 
 /* Disabled State */
-.is-disabled,
-.is-disabled:hover,
-.is-disabled:focus,
-.is-disabled:active {
+.is-disabled {
   cursor: not-allowed;
   opacity: 0.6;
-  background-color: #c0c0c0; /* You can choose a color that suits your design for disabled state */
-  outline: none; /* Typically, disabled buttons do not show focus state. */
+  background-color: var(--disabled);
+  color: var(--on-disabled);
+  border-color: var(--disabled);
+  outline: none;
+  transition: none; /* Explicitly disable transitions for disabled state */
 }

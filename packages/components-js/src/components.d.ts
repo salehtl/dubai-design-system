@@ -6,13 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DdsAlert {
+        "alertTitle": string;
+        "customClass"?: string;
+        "description": string;
+        "primaryLink"?: string;
+        "primaryText": string;
+        "secondaryLink"?: string;
+        "secondaryText": string;
+        "type": 'primary' | 'secondary';
+        "variant": 'info' | 'warning' | 'error' | 'success';
+    }
     interface DdsButton {
+        /**
+          * The appearance style of the button. "solid" for filled background, "outline" for bordered style.
+         */
+        "appearance": 'solid' | 'outline';
+        /**
+          * If true, displays the button in a compact size with reduced padding.
+         */
+        "compact": boolean;
         /**
           * Disable the button if true.
          */
         "disabled": boolean;
         /**
-          * Indicates the button’s type. Equivalent to the native HTML button `type` attribute.
+          * Indicates the button's type. Equivalent to the native HTML button `type` attribute.
          */
         "type": 'button' | 'submit' | 'reset';
         /**
@@ -20,12 +39,59 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary';
     }
+    interface DdsLink {
+        /**
+          * An optional label for screen readers if  the link text is not descriptive enough.
+         */
+        "customAriaLabel"?: string;
+        /**
+          * If true, the link becomes visually and functionally disabled.  It won’t be clickable or navigable.
+         */
+        "disabled": boolean;
+        /**
+          * If true, the link will prompt for download  rather than navigating to the resource.
+         */
+        "download": boolean;
+        /**
+          * The URL that the hyperlink points to.
+         */
+        "href"?: string;
+        /**
+          * Specifies the relationship between the current document  and the linked document (e.g., 'noopener', 'noreferrer').
+         */
+        "rel"?: string;
+        /**
+          * Specifies where to open the linked document:  _blank, _self, _parent, _top, or a frame name.
+         */
+        "target"?: string;
+    }
+}
+export interface DdsAlertCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDdsAlertElement;
 }
 export interface DdsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLDdsButtonElement;
 }
 declare global {
+    interface HTMLDdsAlertElementEventMap {
+        "closeEvent": void;
+    }
+    interface HTMLDdsAlertElement extends Components.DdsAlert, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLDdsAlertElementEventMap>(type: K, listener: (this: HTMLDdsAlertElement, ev: DdsAlertCustomEvent<HTMLDdsAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLDdsAlertElementEventMap>(type: K, listener: (this: HTMLDdsAlertElement, ev: DdsAlertCustomEvent<HTMLDdsAlertElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLDdsAlertElement: {
+        prototype: HTMLDdsAlertElement;
+        new (): HTMLDdsAlertElement;
+    };
     interface HTMLDdsButtonElementEventMap {
         "ddsClick": MouseEvent;
     }
@@ -43,12 +109,40 @@ declare global {
         prototype: HTMLDdsButtonElement;
         new (): HTMLDdsButtonElement;
     };
+    interface HTMLDdsLinkElement extends Components.DdsLink, HTMLStencilElement {
+    }
+    var HTMLDdsLinkElement: {
+        prototype: HTMLDdsLinkElement;
+        new (): HTMLDdsLinkElement;
+    };
     interface HTMLElementTagNameMap {
+        "dds-alert": HTMLDdsAlertElement;
         "dds-button": HTMLDdsButtonElement;
+        "dds-link": HTMLDdsLinkElement;
     }
 }
 declare namespace LocalJSX {
+    interface DdsAlert {
+        "alertTitle"?: string;
+        "customClass"?: string;
+        "description"?: string;
+        "onCloseEvent"?: (event: DdsAlertCustomEvent<void>) => void;
+        "primaryLink"?: string;
+        "primaryText"?: string;
+        "secondaryLink"?: string;
+        "secondaryText"?: string;
+        "type"?: 'primary' | 'secondary';
+        "variant"?: 'info' | 'warning' | 'error' | 'success';
+    }
     interface DdsButton {
+        /**
+          * The appearance style of the button. "solid" for filled background, "outline" for bordered style.
+         */
+        "appearance"?: 'solid' | 'outline';
+        /**
+          * If true, displays the button in a compact size with reduced padding.
+         */
+        "compact"?: boolean;
         /**
           * Disable the button if true.
          */
@@ -58,7 +152,7 @@ declare namespace LocalJSX {
          */
         "onDdsClick"?: (event: DdsButtonCustomEvent<MouseEvent>) => void;
         /**
-          * Indicates the button’s type. Equivalent to the native HTML button `type` attribute.
+          * Indicates the button's type. Equivalent to the native HTML button `type` attribute.
          */
         "type"?: 'button' | 'submit' | 'reset';
         /**
@@ -66,15 +160,45 @@ declare namespace LocalJSX {
          */
         "variant"?: 'primary' | 'secondary';
     }
+    interface DdsLink {
+        /**
+          * An optional label for screen readers if  the link text is not descriptive enough.
+         */
+        "customAriaLabel"?: string;
+        /**
+          * If true, the link becomes visually and functionally disabled.  It won’t be clickable or navigable.
+         */
+        "disabled"?: boolean;
+        /**
+          * If true, the link will prompt for download  rather than navigating to the resource.
+         */
+        "download"?: boolean;
+        /**
+          * The URL that the hyperlink points to.
+         */
+        "href"?: string;
+        /**
+          * Specifies the relationship between the current document  and the linked document (e.g., 'noopener', 'noreferrer').
+         */
+        "rel"?: string;
+        /**
+          * Specifies where to open the linked document:  _blank, _self, _parent, _top, or a frame name.
+         */
+        "target"?: string;
+    }
     interface IntrinsicElements {
+        "dds-alert": DdsAlert;
         "dds-button": DdsButton;
+        "dds-link": DdsLink;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "dds-alert": LocalJSX.DdsAlert & JSXBase.HTMLAttributes<HTMLDdsAlertElement>;
             "dds-button": LocalJSX.DdsButton & JSXBase.HTMLAttributes<HTMLDdsButtonElement>;
+            "dds-link": LocalJSX.DdsLink & JSXBase.HTMLAttributes<HTMLDdsLinkElement>;
         }
     }
 }

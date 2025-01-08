@@ -1,7 +1,49 @@
 /* global.css */
 @import './reset.css';
+@import './colors.css';
+
+/* Base Typography Styles */
+@font-face {
+    font-family: 'Dubai';
+    src: url('../assets/fonts/dubai/Dubai-Bold.woff2') format('woff2'),
+    url('../assets/fonts/dubai/Dubai-Bold.woff') format('woff'),
+    url('../assets/fonts/dubai/Dubai-Bold.eot') format('embedded-opentype'),
+    url('../assets/fonts/dubai/Dubai-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../assets/fonts/dubai/Dubai-Light.woff2') format('woff2'),
+    url('../assets/fonts/dubai/Dubai-Light.woff') format('woff'),
+    url('../assets/fonts/dubai/Dubai-Light.eot') format('embedded-opentype'),
+    url('../assets/fonts/dubai/Dubai-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../assets/fonts/dubai/Dubai-Medium.woff2') format('woff2'),
+    url('../assets/fonts/dubai/Dubai-Medium.woff') format('woff'),
+    url('../assets/fonts/dubai/Dubai-Medium.eot') format('embedded-opentype'),
+    url('../assets/fonts/dubai/Dubai-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../assets/fonts/dubai/Dubai-Regular.woff2') format('woff2'),
+    url('../assets/fonts/dubai/Dubai-Regular.woff') format('woff'),
+    url('../assets/fonts/dubai/Dubai-Regular.eot') format('embedded-opentype'),
+    url('../assets/fonts/dubai/Dubai-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* 
-  Example Global Variables for Colors, Typography, and Type Scale
+  Global Variables for Colors, Typography, and Type Scale
   -----------------------------------------------------------------
   - Includes a Utopia.fyi fluid type scale
   - Defines brand, accent, and neutral color variables using OKLCH colors
@@ -25,38 +67,13 @@
     --step-6:  clamp(2.986rem, 2.5508rem + 2.1759vw, 4.2915rem);
     --step-7:  clamp(3.5832rem, 2.9894rem + 2.9687vw, 5.3644rem);
   
-    /* Color Palette (using OKLCH colors) */
-    --color-brand-primary: oklch(55% 0.15 240);    /* Blue */
-    --color-brand-secondary: oklch(50% 0.20 300);  /* Purple */
-    --color-accent: oklch(65% 0.25 25);           /* Coral */
-  
-    /* Neutrals / Grays in OKLCH */
-    --color-white: oklch(100% 0 0);
-    --color-black: oklch(0% 0 0);
-    --color-gray-50: oklch(98% 0 0);
-    --color-gray-100: oklch(95% 0 0);
-    --color-gray-200: oklch(90% 0 0);
-    --color-gray-300: oklch(85% 0 0);
-    --color-gray-400: oklch(70% 0 0);
-    --color-gray-500: oklch(55% 0 0);
-    --color-gray-600: oklch(45% 0 0);
-    --color-gray-700: oklch(35% 0 0);
-    --color-gray-800: oklch(25% 0 0);
-    --color-gray-900: oklch(20% 0 0);
-  
-    /* Semantic Colors (Status/Feedback) in OKLCH */
-    --color-success: oklch(55% 0.15 140);         /* Green */
-    --color-warning: oklch(70% 0.15 85);          /* Yellow/Orange */
-    --color-error: oklch(65% 0.25 25);            /* Red */
-    --color-info: oklch(65% 0.15 240);            /* Light Blue */
-  
     /* Text Colors */
     --color-text-primary: var(--color-gray-900);
     --color-text-secondary: var(--color-gray-500);
     --color-text-on-brand: var(--color-white);
   
     /* Typography Families (sample, replace as needed) */
-    --font-family-sans: 'Dubai', 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-family-sans: Dubai;
     --font-family-serif: Georgia, 'Times New Roman', Times, serif;
     --font-family-mono: Consolas, 'Courier New', Courier, monospace;
   
@@ -64,7 +81,7 @@
     --line-height-body: 1.5;
     --line-height-heading: 1.2;
   
-    /* Sample Base Spacing (Optional) */
+    /* Base Spacing */
     --space-1: 0.25rem;  /* 4px */
     --space-2: 0.5rem;   /* 8px */
     --space-3: 1rem;     /* 16px */
@@ -72,33 +89,6 @@
     --space-5: 2rem;     /* 32px */
 }
 
-/* Base Typography Styles */
-@font-face {
-    font-family: 'Dubai';
-    src: url('/fonts/Dubai-Regular.woff2') format('woff2'),
-         url('/fonts/Dubai-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dubai';
-    src: url('/fonts/Dubai-Medium.woff2') format('woff2'),
-         url('/fonts/Dubai-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dubai';
-    src: url('/fonts/Dubai-Bold.woff2') format('woff2'),
-         url('/fonts/Dubai-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 
 html {
     font-family: var(--font-family-sans);
@@ -112,46 +102,51 @@ body {
     margin: 0;
 }
 
+*:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* Heading Styles */
 h1 {
     font-size: var(--step-5);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-2);
     font-weight: bold;
 }
 
 h2 {
     font-size: var(--step-4);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
     font-weight: bold;
 }
 
 h3 {
     font-size: var(--step-3);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
     font-weight: bold;
 }
 
 h4 {
     font-size: var(--step-2);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
     font-weight: bold;
 }
 
 h5 {
     font-size: var(--step-1);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
     font-weight: bold;
 }
 
 h6 {
     font-size: var(--step-0);
     line-height: var(--line-height-heading);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
     font-weight: bold;
 }
 
@@ -174,11 +169,11 @@ small {
 ul, ol {
     font-size: var(--step-0);
     margin-bottom: var(--space-3);
-    padding-left: var(--space-4);
+    padding-left: var(--space-3);
 }
 
 li {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
 }
 
 /* Blockquotes */
@@ -186,6 +181,6 @@ blockquote {
     font-size: var(--step-1);
     line-height: var(--line-height-body);
     margin: var(--space-4) 0;
-    padding-left: var(--space-4);
-    border-left: 4px solid var(--color-gray-200);
+    padding-left: var(--space-3);
+    border-left: 4px solid var(--neutral-variant-30);
 }

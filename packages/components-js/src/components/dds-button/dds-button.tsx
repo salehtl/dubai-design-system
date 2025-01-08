@@ -13,7 +13,13 @@ export class DdsButton {
   @Prop() variant: 'primary' | 'secondary' = 'primary';
 
   /**
-   * Indicates the button’s type.
+   * The appearance style of the button.
+   * "solid" for filled background, "outline" for bordered style.
+   */
+  @Prop() appearance: 'solid' | 'outline' = 'solid';
+
+  /**
+   * Indicates the button's type.
    * Equivalent to the native HTML button `type` attribute.
    */
   @Prop() type: 'button' | 'submit' | 'reset' = 'button';
@@ -22,6 +28,11 @@ export class DdsButton {
    * Disable the button if true.
    */
   @Prop() disabled: boolean = false;
+
+  /**
+   * If true, displays the button in a compact size with reduced padding.
+   */
+  @Prop() compact: boolean = false;
 
   /**
    * Fires when the button is clicked (if not disabled).
@@ -45,7 +56,9 @@ export class DdsButton {
           class={{
             'dds-button': true,
             [`dds-button--${this.variant}`]: true,
+            [`dds-button--${this.appearance}`]: true,
             'is-disabled': this.disabled,
+            'dds-button--compact': this.compact
           }}
           disabled={this.disabled}
           aria-disabled={this.disabled ? 'true' : null}

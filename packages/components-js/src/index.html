@@ -33,6 +33,18 @@
   </head>
   <body>
     <div class="container">
+      <dds-alert 
+        type="primary" 
+        variant="info" 
+        alert-title="Alert Title" 
+        alert-description="This is a description of the alert." 
+        primary-link="https://www.google.com" 
+        secondary-link="https://www.google.com" 
+        primary-text="Primary" 
+        secondary-text="Secondary" 
+        custom-class="custom-class" 
+        onClose={handleClose}
+      ></dds-alert>
       <section class="header">
         <h1>Hello World</h1>
         <small>This is a small text</small>
@@ -52,6 +64,26 @@
     >
         Secondary Action
       </dds-button>
+
+      <dds-button 
+        id="outline-btn"
+        variant="secondary"
+        appearance="outline"
+      >
+        Outline Action
+      </dds-button>
+
+      <dds-button 
+        id="disabled-btn"
+        variant="primary"
+        disabled="true"
+      >
+        Disabled Action
+      </dds-button>
+
+      <dds-link href="https://www.google.com">
+        Link to Google
+      </dds-link>
     </div>
   </body>
 </html>
