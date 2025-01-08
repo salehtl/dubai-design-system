@@ -30,7 +30,7 @@
     "url": "https://github.com/salehtl/dubai-design-system/issues"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "dependencies": {
     "@dubai-design-system/components-js": "*"
