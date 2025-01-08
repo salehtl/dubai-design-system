@@ -1,6 +1,6 @@
 {
   "name": "@dubai-design-system/components-vue",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.4-alpha.1",
   "description": "Dubai Design System as Vue Components",
   "keywords": [
     "components"
@@ -27,5 +27,6 @@
   },
   "dependencies": {
     "@dubai-design-system/components-js": "*"
-  }
+  },
+  "gitHead": "371f431468b769007f110ef965f336c2213c8dc8"
 }
