@@ -1,0 +1,47 @@
+/* eslint-disable */
+/* tslint:disable */
+/* auto-generated vue proxies */
+import { defineContainer } from '@stencil/vue-output-target/runtime';
+
+import type { JSX } from '@dubai-design-system/components-js';
+
+
+
+
+export const DdsAlert = /*@__PURE__*/ defineContainer<JSX.DdsAlert>('dds-alert', undefined, [
+  'type',
+  'variant',
+  'alertTitle',
+  'description',
+  'primaryLink',
+  'secondaryLink',
+  'primaryText',
+  'secondaryText',
+  'customClass',
+  'closeEvent'
+], [
+  'closeEvent'
+]);
+
+
+export const DdsButton = /*@__PURE__*/ defineContainer<JSX.DdsButton>('dds-button', undefined, [
+  'variant',
+  'appearance',
+  'type',
+  'disabled',
+  'compact',
+  'ddsClick'
+], [
+  'ddsClick'
+]);
+
+
+export const DdsLink = /*@__PURE__*/ defineContainer<JSX.DdsLink>('dds-link', undefined, [
+  'href',
+  'target',
+  'rel',
+  'download',
+  'customAriaLabel',
+  'disabled'
+]);
+

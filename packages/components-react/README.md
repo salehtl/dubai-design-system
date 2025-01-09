@@ -36,7 +36,7 @@ You can now use the components directly in your React application. The component
 import React from 'react';
 import { DdsButton } from '@dubai-design-system/components-react';
 
-const HomePage = () => {
+const App = () => {
   return (
     <div>
       <h1>Welcome to Dubai Design System</h1>
@@ -45,5 +45,5 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default App;
 ```

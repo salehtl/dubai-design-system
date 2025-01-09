@@ -1,42 +1,41 @@
 import { Config } from '@stencil/core';
-import { reactOutputTarget } from '@stencil/react-output-target';
-import { vueOutputTarget } from '@stencil/vue-output-target';
+import { reactOutputTarget as react } from '@stencil/react-output-target';
+import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'components-js',
   globalStyle: 'src/global/global.css',
   outputTargets: [
-    {
-      type: 'dist',
-      esmLoaderPath: '../loader',
-    },
-    {
-      type: 'dist-custom-elements',
-      customElementsExportBehavior: 'default',
-      dir: 'loader',
-      generateTypeDeclarations: true,
+		{
+			type: 'dist',
+			esmLoaderPath: '../loader',
+			copy: [{ src: 'assets', dest: '../assets', warn: true }]
+		},
+		{
+			type: 'dist-custom-elements',
       externalRuntime: false,
-    },
-    vueOutputTarget({
-      componentCorePackage: '@dubai-design-system/components-js',
-      proxiesFile: '../components-vue/dist/components.ts',
-    }),
-    reactOutputTarget({
-      // Relative path to where the React components will be generated
-      outDir: '../components-react/dist/components/stencil-generated/',
-      esModules: true,
-    }),
-    {
-      type: 'docs-readme',
-    },
-    {
+		},
+		{
+			type: 'docs-readme',
+			strict: true,
+			footer: ''
+		},
+		{
 			type: 'docs-json',
 			file: 'docs/docs.json'
 		},
-    // {
-    //   type: 'www',
-    //   serviceWorker: null, // disable service workers
-    // },
+    react({
+      outDir: '../components-react/src/',
+		}),
+    vue({
+      componentCorePackage: '@dubai-design-system/components-js',
+      proxiesFile: '../components-vue/src/',
+		}),
+		// {
+		// 	type: 'www',
+		// 	serviceWorker: null, // disable service workers
+		// 	copy: [{ src: 'assets/svg-symbols.svg', dest: 'svg-symbols.svg' }]
+		// }
   ],
   testing: {
     browserHeadless: "new",

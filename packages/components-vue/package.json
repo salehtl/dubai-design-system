@@ -28,5 +28,8 @@
     "@dubai-design-system/components-js": "*",
     "@stencil/vue-output-target": "^0.9.2"
   },
-  "gitHead": "371f431468b769007f110ef965f336c2213c8dc8"
+  "gitHead": "371f431468b769007f110ef965f336c2213c8dc8",
+  "devDependencies": {
+    "vue": "^3.5.13"
+  }
 }
