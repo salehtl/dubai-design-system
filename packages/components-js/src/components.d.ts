@@ -7,14 +7,41 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DdsAlert {
+        /**
+          * The main heading text of the alert.
+         */
         "alertTitle": string;
+        /**
+          * Additional CSS class names to apply to the alert container. Multiple classes can be provided as a space-separated string.
+         */
         "customClass"?: string;
+        /**
+          * The detailed message text of the alert.
+         */
         "description": string;
+        /**
+          * URL for the primary action button. If provided, clicking the primary button will navigate to this URL.
+         */
         "primaryLink"?: string;
+        /**
+          * Text label for the primary action button.
+         */
         "primaryText": string;
+        /**
+          * URL for the secondary action button. If provided, clicking the secondary button will navigate to this URL.
+         */
         "secondaryLink"?: string;
+        /**
+          * Text label for the secondary action button.
+         */
         "secondaryText": string;
+        /**
+          * The visual style type of the alert. 'primary' for stronger emphasis, 'secondary' for lighter emphasis.
+         */
         "type": 'primary' | 'secondary';
+        /**
+          * The semantic variant of the alert that indicates its purpose. - 'info': For general information messages - 'warning': For warning messages that require attention - 'error': For error messages that indicate a problem - 'success': For success messages that confirm a positive outcome
+         */
         "variant": 'info' | 'warning' | 'error' | 'success';
     }
     interface DdsButton {
@@ -123,15 +150,45 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DdsAlert {
+        /**
+          * The main heading text of the alert.
+         */
         "alertTitle"?: string;
+        /**
+          * Additional CSS class names to apply to the alert container. Multiple classes can be provided as a space-separated string.
+         */
         "customClass"?: string;
+        /**
+          * The detailed message text of the alert.
+         */
         "description"?: string;
+        /**
+          * Event emitted when the close button is clicked.
+         */
         "onCloseEvent"?: (event: DdsAlertCustomEvent<void>) => void;
+        /**
+          * URL for the primary action button. If provided, clicking the primary button will navigate to this URL.
+         */
         "primaryLink"?: string;
+        /**
+          * Text label for the primary action button.
+         */
         "primaryText"?: string;
+        /**
+          * URL for the secondary action button. If provided, clicking the secondary button will navigate to this URL.
+         */
         "secondaryLink"?: string;
+        /**
+          * Text label for the secondary action button.
+         */
         "secondaryText"?: string;
+        /**
+          * The visual style type of the alert. 'primary' for stronger emphasis, 'secondary' for lighter emphasis.
+         */
         "type"?: 'primary' | 'secondary';
+        /**
+          * The semantic variant of the alert that indicates its purpose. - 'info': For general information messages - 'warning': For warning messages that require attention - 'error': For error messages that indicate a problem - 'success': For success messages that confirm a positive outcome
+         */
         "variant"?: 'info' | 'warning' | 'error' | 'success';
     }
     interface DdsButton {

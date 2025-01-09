@@ -6,16 +6,62 @@ import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
   shadow: true,
 })
 export class DdsAlert {
+  /**
+   * The visual style type of the alert.
+   * 'primary' for stronger emphasis, 'secondary' for lighter emphasis.
+   */
   @Prop() type: 'primary' | 'secondary' = 'primary';
+
+  /**
+   * The semantic variant of the alert that indicates its purpose.
+   * - 'info': For general information messages
+   * - 'warning': For warning messages that require attention
+   * - 'error': For error messages that indicate a problem
+   * - 'success': For success messages that confirm a positive outcome
+   */
   @Prop() variant: 'info' | 'warning' | 'error' | 'success' = 'info';
+
+  /**
+   * The main heading text of the alert.
+   */
   @Prop() alertTitle: string = '';
+
+  /**
+   * The detailed message text of the alert.
+   */
   @Prop() description: string = '';
+
+  /**
+   * URL for the primary action button.
+   * If provided, clicking the primary button will navigate to this URL.
+   */
   @Prop() primaryLink?: string;
+
+  /**
+   * URL for the secondary action button.
+   * If provided, clicking the secondary button will navigate to this URL.
+   */
   @Prop() secondaryLink?: string;
+
+  /**
+   * Text label for the primary action button.
+   */
   @Prop() primaryText: string = 'Primary';
+
+  /**
+   * Text label for the secondary action button.
+   */
   @Prop() secondaryText: string = 'Secondary';
+
+  /**
+   * Additional CSS class names to apply to the alert container.
+   * Multiple classes can be provided as a space-separated string.
+   */
   @Prop() customClass?: string = '';
 
+  /**
+   * Event emitted when the close button is clicked.
+   */
   @Event() closeEvent: EventEmitter<void>;
 
   private handleClose(event: MouseEvent) {

@@ -1,0 +1,634 @@
+{
+  "timestamp": "2025-01-09T15:17:26",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.23.1",
+    "typescriptVersion": "5.5.4"
+  },
+  "components": [
+    {
+      "filePath": "src/components/dds-alert/dds-alert.tsx",
+      "encapsulation": "shadow",
+      "tag": "dds-alert",
+      "readme": "# dds-alert\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alertTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "alert-title",
+          "reflectToAttr": false,
+          "docs": "The main heading text of the alert.",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "Additional CSS class names to apply to the alert container.\nMultiple classes can be provided as a space-separated string.",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "description",
+          "reflectToAttr": false,
+          "docs": "The detailed message text of the alert.",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "primaryLink",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "primary-link",
+          "reflectToAttr": false,
+          "docs": "URL for the primary action button.\nIf provided, clicking the primary button will navigate to this URL.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "primaryText",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "primary-text",
+          "reflectToAttr": false,
+          "docs": "Text label for the primary action button.",
+          "docsTags": [],
+          "default": "'Primary'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "secondaryLink",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "secondary-link",
+          "reflectToAttr": false,
+          "docs": "URL for the secondary action button.\nIf provided, clicking the secondary button will navigate to this URL.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "secondaryText",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "secondary-text",
+          "reflectToAttr": false,
+          "docs": "Text label for the secondary action button.",
+          "docsTags": [],
+          "default": "'Secondary'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "type",
+          "type": "\"primary\" | \"secondary\"",
+          "complexType": {
+            "original": "'primary' | 'secondary'",
+            "resolved": "\"primary\" | \"secondary\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The visual style type of the alert.\n'primary' for stronger emphasis, 'secondary' for lighter emphasis.",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "variant",
+          "type": "\"error\" | \"info\" | \"success\" | \"warning\"",
+          "complexType": {
+            "original": "'info' | 'warning' | 'error' | 'success'",
+            "resolved": "\"error\" | \"info\" | \"success\" | \"warning\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "The semantic variant of the alert that indicates its purpose.\n- 'info': For general information messages\n- 'warning': For warning messages that require attention\n- 'error': For error messages that indicate a problem\n- 'success': For success messages that confirm a positive outcome",
+          "docsTags": [],
+          "default": "'info'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "closeEvent",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event emitted when the close button is clicked.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "dds-button"
+      ],
+      "dependencyGraph": {
+        "dds-alert": [
+          "dds-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/dds-button/dds-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "dds-button",
+      "readme": "# dds-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "appearance",
+          "type": "\"outline\" | \"solid\"",
+          "complexType": {
+            "original": "'solid' | 'outline'",
+            "resolved": "\"outline\" | \"solid\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "appearance",
+          "reflectToAttr": false,
+          "docs": "The appearance style of the button.\n\"solid\" for filled background, \"outline\" for bordered style.",
+          "docsTags": [],
+          "default": "'solid'",
+          "values": [
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "value": "solid",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "compact",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "compact",
+          "reflectToAttr": false,
+          "docs": "If true, displays the button in a compact size with reduced padding.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disable the button if true.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "complexType": {
+            "original": "'button' | 'submit' | 'reset'",
+            "resolved": "\"button\" | \"reset\" | \"submit\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Indicates the button's type.\nEquivalent to the native HTML button `type` attribute.",
+          "docsTags": [],
+          "default": "'button'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "variant",
+          "type": "\"primary\" | \"secondary\"",
+          "complexType": {
+            "original": "'primary' | 'secondary'",
+            "resolved": "\"primary\" | \"secondary\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "The visual variant for the button (emphasis level).\n\"primary\" for strong emphasis, \"secondary\" for lighter emphasis.",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ddsClick",
+          "detail": "MouseEvent",
+          "bubbles": true,
+          "complexType": {
+            "original": "MouseEvent",
+            "resolved": "MouseEvent",
+            "references": {
+              "MouseEvent": {
+                "location": "global",
+                "id": "global::MouseEvent"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Fires when the button is clicked (if not disabled).",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "button",
+          "docs": ""
+        }
+      ],
+      "dependents": [
+        "dds-alert"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "dds-alert": [
+          "dds-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/dds-link/dds-link.tsx",
+      "encapsulation": "shadow",
+      "tag": "dds-link",
+      "readme": "# dds-link\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customAriaLabel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "custom-aria-label",
+          "reflectToAttr": false,
+          "docs": "An optional label for screen readers if \nthe link text is not descriptive enough.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If true, the link becomes visually and functionally disabled. \nIt won’t be clickable or navigable.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "download",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "download",
+          "reflectToAttr": false,
+          "docs": "If true, the link will prompt for download \nrather than navigating to the resource.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "The URL that the hyperlink points to.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "rel",
+          "reflectToAttr": false,
+          "docs": "Specifies the relationship between the current document \nand the linked document (e.g., 'noopener', 'noreferrer').",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "Specifies where to open the linked document: \n_blank, _self, _parent, _top, or a frame name.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ],
+  "typeLibrary": {}
+}
