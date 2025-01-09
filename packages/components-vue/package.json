@@ -6,7 +6,6 @@
     "components"
   ],
   "author": "saleh <saleh.lootah@digitaldubai.ae>",
-  "homepage": "https://www.npmjs.com/settings/dubai-design-system/packages",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,7 +25,8 @@
     "access": "restricted"
   },
   "dependencies": {
-    "@dubai-design-system/components-js": "*"
+    "@dubai-design-system/components-js": "*",
+    "@stencil/vue-output-target": "^0.9.2"
   },
   "gitHead": "371f431468b769007f110ef965f336c2213c8dc8"
 }

@@ -7,7 +7,6 @@
     "components",
     "web-components"
   ],
-  "homepage": "https://www.npmjs.com/settings/dubai-design-system/packages",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",

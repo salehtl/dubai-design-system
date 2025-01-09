@@ -8,11 +8,11 @@ export const config: Config = {
   outputTargets: [
     vueOutputTarget({
       componentCorePackage: '@dubai-design-system/components-js',
-      proxiesFile: '../components-vue/lib/components.ts',
+      proxiesFile: '../components-vue/dist/components.ts',
     }),
     reactOutputTarget({
       // Relative path to where the React components will be generated
-      outDir: '../components-react/lib/components/stencil-generated/',
+      outDir: '../components-react/dist/components/stencil-generated/',
     }),
     {
       type: 'dist',

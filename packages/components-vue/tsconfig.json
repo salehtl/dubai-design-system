@@ -8,6 +8,6 @@
       "target": "es2017",
       "skipLibCheck": true
     },
-    "include": ["lib"],
+    "include": ["dist"],
     "exclude": ["node_modules"]
   }

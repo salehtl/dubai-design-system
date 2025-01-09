@@ -7,7 +7,6 @@
     "components",
     "react"
   ],
-  "homepage": "https://www.npmjs.com/settings/dubai-design-system/packages",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -25,7 +24,8 @@
     "tsc": "tsc -p . --outDir ./dist"
   },
   "dependencies": {
-    "@dubai-design-system/components-js": "*"
+    "@dubai-design-system/components-js": "*",
+    "@stencil/react-output-target": "^0.8.1"
   },
   "publishConfig": {
     "access": "restricted"
